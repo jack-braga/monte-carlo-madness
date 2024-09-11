@@ -1,8 +1,12 @@
+# Run `python3 app.py`
+
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from calc import monte_carlo_simulation
 import numpy as np
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/simulate', methods=['POST'])
 def simulate():
