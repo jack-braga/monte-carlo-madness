@@ -1,12 +1,20 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import SimulationComponent from './SimDemo';
+// import SimulationComponent from './SimDemo';
+// import NavBar from './components/NavBar';
+import GraphArea from './components/GraphArea';
+import VariableArea from './components/VariableArea';
 
 function App() {
   return (
     <div className="App">
-      <SimulationComponent />
-      <header className="App-header">
+      {/* <SimulationComponent /> */}
+      {/* <NavBar/> */}
+      <div className='areaContainer'>
+        <VariableArea/>
+        <GraphArea/>
+      </div>
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -19,7 +27,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }
