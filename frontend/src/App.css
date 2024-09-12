@@ -4,25 +4,54 @@
 
 :root {
   --box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -1px, rgba(0, 0, 0, 0.14) 0px 6px 6px 0px, rgba(0, 0, 0, 0.12) 0px 1px 9px 0px;
+  --primary-color: rgb(212, 168, 45);
+  --background-color: rgb(241, 230, 200);
+  --secondary-color: rgb(255, 251, 239);;
 }
 
 [theme="dark"] {
   /* styles here */
 }
 
+.App {
+  font-family: ubuntu;
+  background-color: var(--background-color);
+}
+
+.navBar {
+  background-color: var(--primary-color);
+  height: 80px;
+  width: 100%;
+  /* margin-bottom: 4px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 80px;
+}
+
+.title {
+  font-family: ubuntu;
+  font-size: 40px;
+  margin: 16px;
+}
 
 .areaContainer {
   display: flex;
 }
 
 .variableArea {
-  background-color: yellow;
+  background-color: var(--secondary-color);
   display: flex;
   flex-flow: column;
   overflow-y: auto;
   width: 20vw;
   min-width: 150px;
   height: 100vh;
+  border-radius: 4px;
+  margin: 4px;
 }
 
 .variable {

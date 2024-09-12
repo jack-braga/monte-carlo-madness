@@ -2,7 +2,7 @@
 import './App.css';
 import React, { useState } from 'react';
 // import SimulationComponent from './SimDemo';
-// import NavBar from './components/NavBar';
+import NavBar from './components/NavBar';
 import GraphArea from './components/GraphArea';
 import VariableArea from './components/VariableArea';
 
@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App">
       {/* <SimulationComponent /> */}
-      {/* <NavBar/> */}
+      <NavBar/>
       <div className='areaContainer'>
         <VariableArea variables={variables} onSetDistribution={changeVariableDistribution} onDelete={deleteVariable} addVariable={addVariable}/>
         <GraphArea variables={variables} />
