@@ -1,4 +1,5 @@
-export const simulateMonteCarlo = async (distribution, params, bins) => {
+export const simulateMonteCarlo = async (variables, size, bins) => {
+  console.log("VARs: ", variables);
     try {
       const response = await fetch('http://localhost:5000/simulate', {
         method: 'POST',
@@ -6,8 +7,8 @@ export const simulateMonteCarlo = async (distribution, params, bins) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          distribution: distribution,
-          params: params,
+          variables: [...variables],
+          size: size,
           bins: bins,
         }),
       });
@@ -20,7 +21,7 @@ export const simulateMonteCarlo = async (distribution, params, bins) => {
       console.log('Simulation results:', data);
       return data;
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Request Error:', error);
     }
   };
   

@@ -1,14 +1,14 @@
 // import React, { useEffect, useState } from 'react';
-import DropdownButton from './DropdownButton';
+// import DropdownButton from './DropdownButton';
 
-const Parameters = ({ distribution, id, onSetDistribution, onDelete }) => {
+// const Parameters = ({ distribution, id, onSetDistribution, onDelete }) => {
 
-    return (
-        <div className="parameters">
-            {/*conditionall render the input fields required for each distribution*/}
-        </div>
-    );
-  };
+//     return (
+//         <div className="parameters">
+//             {/*conditionall render the input fields required for each distribution*/}
+//         </div>
+//     );
+//   };
 
 /*
 Beta: [a, b, size]
@@ -39,4 +39,4 @@ Weibull: [a, size]
 Zipf: [a, size]
 */
   
-  export default Parameters;
+  // export default Parameters;

@@ -1,32 +1,10 @@
-import React, { useState } from 'react';
 import Variable from './Variable';
 
-const VariableArea = () => {
-    const [variables, setVariables] = useState([]);
-
-    const addVariable = () => {
-        const newVar = {
-            distribution: 'normal',
-            id: Date.now() + Math.random(),
-        };
-        setVariables(prevArray => [...prevArray, newVar]);
-    };
-
-    const deleteVariable = (id) => {
-        setVariables((prevArray) => prevArray.filter((v) => v.id !== id));
-    };
-
-    const changeVariableDistribution = (id, newDistribution) => {
-        const updatedVariables = variables.map((v) => {
-            return v.id === id ? { ...v, distribution: newDistribution } : v;
-        });
-        setVariables(updatedVariables);
-    }
-
+const VariableArea = ({ variables, onSetDistribution, onDelete, addVariable }) => {
     return (
         <div className='variableArea'>
             {variables.map( (v) => {
-                return <Variable distribution={v.distribution} id={v.id} key={v.id} onSetDistribution={changeVariableDistribution} onDelete={deleteVariable} />
+                return <Variable distribution={v.distribution} id={v.id} key={v.id} onSetDistribution={onSetDistribution} onDelete={onDelete} />
             })}
             <button type="button" className='newVariableButton' onClick={addVariable}>Add Variable</button>
         </div>

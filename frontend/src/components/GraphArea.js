@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { simulateMonteCarlo } from '../APIs/pythonSimulation';
 import Histogram from './Histogram';
 
-const GraphArea = () => {
+const GraphArea = ({ variables }) => {
     const [results, setResults] = useState(null);
     const [histogramData, setHistogramData] = useState(null);
   
     const handleSimulation = async () => {
-      const data = await simulateMonteCarlo('normal', [0, 1, 4999], 50);
-      setResults(data);
-      setHistogramData(data);
+    	const data = await simulateMonteCarlo(variables, 2130, 50);
+        setResults(data);
+        setHistogramData(data);
     };
   
     useEffect(() => {

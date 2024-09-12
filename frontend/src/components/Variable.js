@@ -1,6 +1,6 @@
 // import React, { useEffect, useState } from 'react';
 import DropdownButton from './DropdownButton';
-import Parameters from './Parameters';
+// import Parameters from './Parameters';
 
 const Variable = ({ distribution, id, onSetDistribution, onDelete }) => {
 
@@ -11,7 +11,7 @@ const Variable = ({ distribution, id, onSetDistribution, onDelete }) => {
                 <DropdownButton onSetDistribution={onSetDistribution} distribution={distribution} id={id}/>
                 <p className='dropdownLabel'>distribution</p>
             </span>
-            <Parameters/>
+            {/* <Parameters/> */}
             {/* <p>The is a {distribution} distribution</p> */}
         </div>
     );

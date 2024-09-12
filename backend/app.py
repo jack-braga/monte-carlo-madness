@@ -2,7 +2,7 @@
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from calc import monte_carlo_simulation
+from calc import sum_simulations
 import numpy as np
 
 app = Flask(__name__)
@@ -13,16 +13,16 @@ def simulate():
     try:
         # Extract data from JSON
         data = request.json
-        distribution = data.get('distribution')  # e.g., 'normal', 'triangular'
-        params = data.get('params')  # e.g., [0, 1, 4999] for normal distribution
+        variables = data.get('variables')  # e.g., 'normal', 'triangular'
+        size = data.get('size')  # e.g., [0, 1, 4999] for normal distribution
         bins = data.get('bins')
         
         # Check if req. params
-        if not distribution or not params:
-            return jsonify({"error": "Missing 'distribution' or 'params' in request"}), 400
+        # if not distribution or not params or not data:
+        #     return jsonify({"error": "Missing 'distribution' or 'params' in request"}), 400
         
         # Run Monte Carlo simulation
-        results, bin_edges, frequencies = monte_carlo_simulation(distribution, params, bins)
+        results, bin_edges, frequencies = sum_simulations(variables, size, bins)
         
         # Convert NumPy arrays to lists for JSON
         bin_edges_list = bin_edges.tolist()
@@ -30,12 +30,11 @@ def simulate():
 
         # Prepare response data
         response = {
-            # "results": results.tolist(),  # Full Results
             "bin_edges": bin_edges_list,
             "frequencies": frequencies_list,
             "mean": float(np.mean(results)),
             "stddev": float(np.std(results)),
-            "message": f"Monte Carlo simulation for {distribution} distribution completed."
+            "message": f"Monte Carlo simulation for XXX distribution completed."
         }
         return jsonify(response), 200
 
