@@ -31,7 +31,7 @@ const GraphArea = ({ variables }) => {
             <p>Loading...</p>
             )}
         </div>
-        <div className='resultsSummary'>
+        {/* <div className='resultsSummary'>
             {results && (
             <div>
                 <h3>Simulation Results</h3>
@@ -40,7 +40,7 @@ const GraphArea = ({ variables }) => {
                 <p>Frequencies: {results.frequencies.join(', ')}</p>
             </div>
             )}
-        </div>
+        </div> */}
       </div>
     );
   };

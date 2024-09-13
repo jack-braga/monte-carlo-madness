@@ -88,7 +88,7 @@
   overflow-y: auto;
   width: 20vw;
   min-width: 150px;
-  height: 100vh;
+  height: calc(100vh - 80px - 8px - 8px);
   border-radius: 4px;
   margin: 8px;
   box-shadow: var(--box-shadow);
@@ -102,7 +102,7 @@
   margin-top: 8px;
   margin-left: 8px;
   margin-right: 8px;
-  background-color: rgb(0, 255, 255);
+  background-color: rgba(255, 140, 0, 0.39);
   box-shadow: var(--box-shadow);
   position: relative;
 }
@@ -178,5 +178,6 @@
 .graphArea {
   /* display: flex; */
   /* flex-flow: column; */
+  height: 100%;
   width: 80vw;
 }

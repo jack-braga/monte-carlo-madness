@@ -1,4 +1,6 @@
 # monte-carlo-madness
+![Logo](./frontend/src/assets/mcmLogo.png)
+
 What?
 - Python backend, React frontend; simple Monte Carlo Simulation/Analysis
 
