@@ -8,6 +8,7 @@ import VariableArea from './components/VariableArea';
 
 function App() {
   const [variables, setVariables] = useState([]);
+  const [theme, setTheme] = useState("light");
 
     const addVariable = () => {
         const newVar = {
@@ -27,12 +28,16 @@ function App() {
             return v.id === id ? { ...v, distribution: newDistribution } : v;
         });
         setVariables(updatedVariables);
-    }
+    };
+
+    const handleTheme = () => {
+      setTheme(t => t === "dark" ? "light" : "dark");
+    };
 
   return (
-    <div className="App">
+    <div className="App" theme={theme}>
       {/* <SimulationComponent /> */}
-      <NavBar/>
+      <NavBar theme={theme} toggleTheme={handleTheme}/>
       <div className='areaContainer'>
         <VariableArea variables={variables} onSetDistribution={changeVariableDistribution} onDelete={deleteVariable} addVariable={addVariable}/>
         <GraphArea variables={variables} />
